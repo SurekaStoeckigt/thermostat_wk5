@@ -6,6 +6,11 @@
   <title>Thermostat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src=https://code.jquery.com/jquery-3.3.1.min.js></script>
+  <script>
+    $.get("https://async-workshops-api.herokuapp.com/people", function(peopleResponse) {
+      $("#person").html(peopleResponse[0].name);
+    });
+  </script>
   <link rel="stylesheet" type="text/css" href="src/thermostat.css">
   <script src="src/link.js"></script>
   <script src="src/thermostat.js"></script>
