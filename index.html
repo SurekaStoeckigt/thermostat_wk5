@@ -6,16 +6,11 @@
   <title>Thermostat</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src=https://code.jquery.com/jquery-3.3.1.min.js></script>
-  <script>
-    $.get("https://async-workshops-api.herokuapp.com/people", function(peopleResponse) {
-      $("#person").html(peopleResponse[0].name);
-    });
-  </script>
   <link rel="stylesheet" type="text/css" href="src/thermostat.css">
   <script src="src/link.js"></script>
   <script src="src/thermostat.js"></script>
-  
-  
+
+
 </head>
 <body>
   Welcome to the Thermostat App!!!
@@ -27,5 +22,11 @@
   <div><button id="powersaving-off">POWERSAVE OFF</button></div>
   <div><h1 id="temperature">CURRENT TEMPERATURE</h1></div>
   <div><h1 id="usage">CURRENT USAGE</h1></div>
+
+<div><input id="city" type="text"></div>
+<div><button id="show_weather">Current weather</button></div>
+<div><h2 id="current_city">  </h2></div>
+<div><h3 id="city_temp"> </h3></div>
+
 </body>
 </html>

@@ -1,4 +1,10 @@
 $( document ).ready(function() {
+  function callingApi(city) {
+$.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID=edffadac5eab7eea07b7479fa0409053&units=metric", function(cities) {
+  document.getElementById("current_city").innerText = cities.name
+  document.getElementById("city_temp").innerText = cities.main.temp
+  });
+}
 function updateTemperature () {
   temperature = document.getElementById("temperature")
   temperature.innerText = thermostat.temperature
@@ -44,11 +50,9 @@ $( "#powersaving-off" ).click(function( event ) {
 var thermostat = new Thermostat();
 updateTemperature();
 updateUsage();
-  $( "#temperature-reset" ).click(function( event ) {
-
-      
-
+  $( "#show_weather" ).click(function( event ) {
+    city = document.getElementById("city")
+    callingApi(city.value)
   });
 
 });
-
